@@ -1,0 +1,11 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+# Salidas de compilación
+out/
+build/
+target/
+*.class
+# Sistema
+.DS_Store
+Thumbs.db
