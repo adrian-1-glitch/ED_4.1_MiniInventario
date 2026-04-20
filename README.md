@@ -5,5 +5,5 @@ Java
 IntelliJ IDEA
 Git
 ## Ejecución
-Abrir el proyecto en IntelliJ IDEA y ejecutar la clase Main.
+Abrir el proyecto en IntelliJ IDEA y ejecutar la clase src.Main.
 Modificación realizada desde la interfaz web de GitHub

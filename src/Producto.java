@@ -1,3 +1,5 @@
+package src;
+
 public class Producto {
     //ATRIBUTOS PRIVADOS
     private String codigo, nombre, categoria;
