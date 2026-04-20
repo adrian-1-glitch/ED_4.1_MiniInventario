@@ -41,20 +41,58 @@ public class Main {
                     break;
 
                 case 4:
-                    venderProducto(listaProductos,sc);
+                    venderProducto(listaProductos, sc);
                     break;
+
+                // --- NUEVO CASO 5 ---
+                case 5:
+                    buscarProducto(listaProductos, sc);
+                    break;
+                // --------------------
 
                 case 0:
                     System.out.println("Saliendo...");
                     break;
-
                 default:
                     System.out.println("Opción inválida");
             }
 
         } while (opcion != 0);
     }
+    // --- NUEVO MÉTODO DE BÚSQUEDA ---
+    public static void buscarProducto(ArrayList<Producto> lista, Scanner sc) {
+        System.out.print("Introduce el nombre del producto a buscar: ");
+        String nombreBuscado = sc.nextLine();
+        boolean encontrado = false;
 
+        for (Producto p : lista) {
+            // Utilizamos equalsIgnoreCase para que no importe si el usuario escribe en mayúsculas o minúsculas
+            if (p.getNombre().equalsIgnoreCase(nombreBuscado)) {
+                System.out.println("\n--- Producto Encontrado ---");
+                System.out.println("Código: " + p.getCodigo());
+                System.out.println("Nombre: " + p.getNombre());
+                System.out.println("Categoría: " + p.getCategoria());
+                System.out.println("Precio: " + p.getPrecio() + "€");
+                System.out.println("Stock: " + p.getStock() + " unidades");
+                encontrado = true;
+                break; // Terminamos la búsqueda al encontrarlo
+            }
+        }
+
+        if (!encontrado) {
+            System.out.println("No se encontró ningún producto con el nombre: " + nombreBuscado);
+        }
+    }
+    public static void mostrarMenu() {
+        System.out.println("\n--- MENU ---");
+        System.out.println("1. Mostrar por categorias");
+        System.out.println("2. Mostrar stock bajo");
+        System.out.println("3. Valor total inventario");
+        System.out.println("4. Vender producto");
+        System.out.println("5. Buscar producto por nombre"); // <-- NUEVA LÍNEA
+        System.out.println("0. Salir");
+        System.out.print("Opcion: ");
+    }
 
     
 
@@ -115,14 +153,5 @@ public static void venderProducto(ArrayList<Producto> lista, Scanner sc) {
     }
 
     System.out.println("src.Producto no encontrado");
-}
-        public static void mostrarMenu() {
-        System.out.println("\n--- MENU ---");
-        System.out.println("1. Mostrar por categorias");
-        System.out.println("2. Mostrar stock bajo");
-        System.out.println("3. Valor total inventario");
-        System.out.println("4. Vender producto");
-        System.out.println("0. Salir");
-        System.out.print("Opcion: ");
-    }
-}
+}}
+
